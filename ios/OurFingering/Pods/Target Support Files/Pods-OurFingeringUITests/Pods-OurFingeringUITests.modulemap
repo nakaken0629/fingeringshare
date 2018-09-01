@@ -1,0 +1,6 @@
+framework module Pods_OurFingeringUITests {
+  umbrella header "Pods-OurFingeringUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
