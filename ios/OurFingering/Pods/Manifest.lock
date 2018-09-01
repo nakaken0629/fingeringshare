@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 37e6302ff68fc5b365d8ae9cc5cdee14821f4965
+PODS:
+  - Floaty (4.0.1)
+
+DEPENDENCIES:
+  - Floaty (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Floaty
+
+SPEC CHECKSUMS:
+  Floaty: 82854e1a5ef4fa208281ebd4da2f3d1e51ba67a6
+
+PODFILE CHECKSUM: 3e552cea93c2abedca3ef2c3c2b2078cb5b70692
 
 COCOAPODS: 1.5.3
