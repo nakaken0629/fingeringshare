@@ -3,7 +3,7 @@
 //  OurFingeringUITests
 //
 //  Created by NAKAGAKI Kenji on 9/2/18.
-//  Copyright © 2018 中垣健志. All rights reserved.
+//  Copyright © 2018 IT Virtuoso. All rights reserved.
 //
 
 import XCTest
