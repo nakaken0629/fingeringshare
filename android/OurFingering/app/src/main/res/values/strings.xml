@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Our Fingering</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="fab_from_camera">from camera</string>
+    <string name="fab_from_library">from library</string>
 </resources>
