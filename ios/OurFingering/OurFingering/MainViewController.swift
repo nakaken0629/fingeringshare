@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let floaty = Floaty()
-        floaty.addItem(title: "from camera")
+        floaty.addItem(title: "from camera", handler: { item in self.floatyCameraClick() })
         floaty.addItem(title: "from library")
         self.view.addSubview(floaty)
     }
@@ -23,5 +23,11 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func floatyCameraClick() {
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .camera
+        present(pickerController, animated: true, completion: nil)
     }
 }

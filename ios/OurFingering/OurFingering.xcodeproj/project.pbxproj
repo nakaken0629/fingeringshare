@@ -10,6 +10,7 @@
 		022CC2D22DA5ACF52C514BE2 /* Pods_OurFingeringTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70E412A6C469711CA5FBE74 /* Pods_OurFingeringTests.framework */; };
 		0AAD134586250D14946FC89B /* Pods_OurFingeringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C387A0B917F31B7A6C85FF /* Pods_OurFingeringUITests.framework */; };
 		88C75A81544A6471C957A35C /* Pods_OurFingering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631492D16430640E7A6B84 /* Pods_OurFingering.framework */; };
+		CF244F0C2142E4DA00D9D808 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF244F0E2142E4DA00D9D808 /* InfoPlist.strings */; };
 		CF99ABC1213AF0B6001AD5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */; };
 		CF99ABC3213AF0B6001AD5EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */; };
 		CF99ABC6213AF0B6001AD5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99ABC4213AF0B6001AD5EE /* Main.storyboard */; };
@@ -44,6 +45,10 @@
 		9B6819E730BEFBD6D9499DB6 /* Pods-OurFingering.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurFingering.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OurFingering/Pods-OurFingering.debug.xcconfig"; sourceTree = "<group>"; };
 		9C7CF00E966AC61EEFE5FF3E /* Pods-OurFingeringUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurFingeringUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OurFingeringUITests/Pods-OurFingeringUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8FDBFAADFECCC0ACB183ED /* Pods-OurFingeringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurFingeringTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OurFingeringTests/Pods-OurFingeringTests.release.xcconfig"; sourceTree = "<group>"; };
+		CF244F0D2142E4DA00D9D808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF244F0F2142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		CF244F102142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CF244F112142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF99ABBD213AF0B6001AD5EE /* OurFingering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurFingering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +148,7 @@
 				CF99ABC7213AF0B8001AD5EE /* Assets.xcassets */,
 				CF99ABC9213AF0B8001AD5EE /* LaunchScreen.storyboard */,
 				CF99ABCC213AF0B8001AD5EE /* Info.plist */,
+				CF244F0E2142E4DA00D9D808 /* InfoPlist.strings */,
 			);
 			path = OurFingering;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = CF99ABB4213AF0B6001AD5EE;
 			productRefGroup = CF99ABBE213AF0B6001AD5EE /* Products */;
@@ -274,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF99ABCB213AF0B8001AD5EE /* LaunchScreen.storyboard in Resources */,
+				CF244F0C2142E4DA00D9D808 /* InfoPlist.strings in Resources */,
 				CF99ABC8213AF0B8001AD5EE /* Assets.xcassets in Resources */,
 				CF99ABC6213AF0B6001AD5EE /* Main.storyboard in Resources */,
 			);
@@ -412,10 +420,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CF244F0E2142E4DA00D9D808 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF244F0D2142E4DA00D9D808 /* en */,
+				CF244F112142E51200D9D808 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		CF99ABC4213AF0B6001AD5EE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CF99ABC5213AF0B6001AD5EE /* Base */,
+				CF244F0F2142E51200D9D808 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -424,6 +442,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CF99ABCA213AF0B8001AD5EE /* Base */,
+				CF244F102142E51200D9D808 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -435,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -495,6 +515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
