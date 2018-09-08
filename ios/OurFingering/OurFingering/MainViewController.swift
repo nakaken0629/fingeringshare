@@ -15,8 +15,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let floaty = Floaty()
-        floaty.addItem(title: "from camera", handler: { item in self.floatyCameraClick() })
-        floaty.addItem(title: "from library")
+        floaty.addItem(icon: UIImage(named: "Camera"), handler: { item in self.floatyCameraClick() })
+        floaty.addItem(icon: UIImage(named: "Library"), handler: { item in self.floatyLibraryClick() })
         self.view.addSubview(floaty)
     }
 
@@ -26,8 +26,14 @@ class MainViewController: UIViewController {
     }
     
     func floatyCameraClick() {
-        let pickerController = UIImagePickerController()
-        pickerController.sourceType = .camera
-        present(pickerController, animated: true, completion: nil)
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func floatyLibraryClick() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
     }
 }
