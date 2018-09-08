@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
+import com.leinardi.android.speeddial.SpeedDialActionItem
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 import red.itvirtuoso.ourfingering.R
 
 class MainActivity : AppCompatActivity() {
@@ -13,21 +13,22 @@ class MainActivity : AppCompatActivity() {
         private val TAG = MainActivity::class.java.name
         private const val REQUEST_CAMERA = 1001
     }
-    private var fabHelper : FabHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        initSpeedDial(savedInstanceState)
+    }
 
-        fabHelper = FabHelper(applicationContext, fab, fab_background, listOf(fab_camera_layout, fab_library_layout))
-
-        fab.setOnClickListener { fabHelper?.toggle() }
-        fab_camera.setOnClickListener{ fabCameraClick() }
+    private fun initSpeedDial(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            speedDial.addActionItem(SpeedDialActionItem.Builder(R.id.fab_camera, android.R.drawable.ic_menu_camera).create())
+            speedDial.addActionItem(SpeedDialActionItem.Builder(R.id.fab_gallery, android.R.drawable.ic_menu_gallery).create())
+        }
     }
 
     private fun fabCameraClick() {
-        fabHelper?.close()
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(intent, REQUEST_CAMERA)
     }
