@@ -37,43 +37,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWW-aX-tMi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWW-aX-tMi" userLabel="PhotoImageView">
                                 <rect key="frame" x="16" y="64" width="343" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="YZJ-up-OBI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5M-mV-cFr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5M-mV-cFr" userLabel="ComposerLabel">
                                 <rect key="frame" x="16" y="312" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmE-CL-0aF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmE-CL-0aF" userLabel="ComposerTextField">
                                 <rect key="frame" x="16" y="341" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-DF-8Jy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-DF-8Jy" userLabel="TitleLabel">
                                 <rect key="frame" x="16" y="379" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NGT-0R-A6k">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NGT-0R-A6k" userLabel="TitleTextField">
                                 <rect key="frame" x="16" y="408" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dai-Qu-enV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dai-Qu-enV" userLabel="InstrumentLabel">
                                 <rect key="frame" x="16" y="446" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-AL-Syd">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-AL-Syd" userLabel="InstrumentTextLabel">
                                 <rect key="frame" x="16" y="475" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -85,7 +85,9 @@
                             <constraint firstItem="gmE-oC-dDB" firstAttribute="trailing" secondItem="fvY-AL-Syd" secondAttribute="trailing" constant="16" id="4ih-fc-AQZ"/>
                             <constraint firstItem="fvY-AL-Syd" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="4kX-MG-c4l"/>
                             <constraint firstItem="tmE-CL-0aF" firstAttribute="top" secondItem="w5M-mV-cFr" secondAttribute="bottom" constant="8" id="Adp-tb-FYI"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G0D-DF-8Jy" secondAttribute="trailing" constant="20" symbolic="YES" id="Akd-A0-zfX"/>
                             <constraint firstItem="gmE-oC-dDB" firstAttribute="trailing" secondItem="sWW-aX-tMi" secondAttribute="trailing" constant="16" id="B2L-t7-3f3"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w5M-mV-cFr" secondAttribute="trailing" constant="20" symbolic="YES" id="CAx-IY-2gR"/>
                             <constraint firstItem="dai-Qu-enV" firstAttribute="top" secondItem="NGT-0R-A6k" secondAttribute="bottom" constant="8" id="Dgr-Aw-Kqt"/>
                             <constraint firstItem="sWW-aX-tMi" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="Idt-OE-pY4"/>
                             <constraint firstItem="tmE-CL-0aF" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="KuG-hu-w3q"/>
@@ -99,6 +101,7 @@
                             <constraint firstItem="w5M-mV-cFr" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="eHg-eH-Vsv"/>
                             <constraint firstItem="dai-Qu-enV" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="gLp-AO-FjZ"/>
                             <constraint firstItem="sWW-aX-tMi" firstAttribute="top" secondItem="gmE-oC-dDB" secondAttribute="top" id="oKg-AF-ovN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dai-Qu-enV" secondAttribute="trailing" constant="20" symbolic="YES" id="pOA-iO-Adc"/>
                             <constraint firstItem="tmE-CL-0aF" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="qac-Ys-84N"/>
                             <constraint firstItem="G0D-DF-8Jy" firstAttribute="leading" secondItem="gmE-oC-dDB" secondAttribute="leading" constant="16" id="sYB-yb-0ib"/>
                             <constraint firstItem="gmE-oC-dDB" firstAttribute="trailing" secondItem="tmE-CL-0aF" secondAttribute="trailing" constant="16" id="tEH-xf-NoK"/>
@@ -109,6 +112,9 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eng-fY-rcw"/>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="eZT-mN-0nJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="sWW-aX-tMi" id="fAj-1U-d0q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmI-52-KCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

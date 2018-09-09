@@ -9,5 +9,12 @@
 import UIKit
 
 class PostViewController : UIViewController {
+    var image: UIImage?
     
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.photoImageView.image = image
+    }
 }

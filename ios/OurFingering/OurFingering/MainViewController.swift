@@ -46,4 +46,19 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         performSegue(withIdentifier: "Post", sender: image)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let identifier = segue.identifier else {
+            return
+        }
+        switch identifier {
+        case "Post":
+            if let viewController = (segue.destination as? UINavigationController)?.topViewController as? PostViewController {
+                viewController.image = sender as? UIImage
+            }
+        default:
+            break
+        }
+    }
 }
