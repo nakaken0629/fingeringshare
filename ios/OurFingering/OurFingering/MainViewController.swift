@@ -9,14 +9,14 @@
 import UIKit
 import Floaty
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let floaty = Floaty()
-        floaty.addItem(icon: UIImage(named: "Camera"), handler: { item in self.floatyCameraClick() })
-        floaty.addItem(icon: UIImage(named: "Library"), handler: { item in self.floatyLibraryClick() })
+        floaty.addItem(icon: UIImage(named: "Camera"), handler: floatyCameraClick)
+        floaty.addItem(icon: UIImage(named: "Library"), handler: floatyLibraryClick)
         self.view.addSubview(floaty)
     }
 
@@ -25,15 +25,25 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func floatyCameraClick() {
+    private func floatyCameraClick(item: FloatyItem) {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
+        picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
     
-    func floatyLibraryClick() {
+    private func floatyLibraryClick(item: FloatyItem) {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
+        picker.delegate = self
         present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: false)
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+        performSegue(withIdentifier: "Post", sender: image)
     }
 }

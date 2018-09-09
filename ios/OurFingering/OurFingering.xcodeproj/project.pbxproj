@@ -18,6 +18,7 @@
 		CF99ABCB213AF0B8001AD5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99ABC9213AF0B8001AD5EE /* LaunchScreen.storyboard */; };
 		CF99ABD6213AF0B8001AD5EE /* OurFingeringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABD5213AF0B8001AD5EE /* OurFingeringTests.swift */; };
 		CF99ABE1213AF0B8001AD5EE /* OurFingeringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABE0213AF0B8001AD5EE /* OurFingeringUITests.swift */; };
+		CFDD261F21454E9F004DA459 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD261E21454E9F004DA459 /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		CF99ABDC213AF0B8001AD5EE /* OurFingeringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OurFingeringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99ABE0213AF0B8001AD5EE /* OurFingeringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurFingeringUITests.swift; sourceTree = "<group>"; };
 		CF99ABE2213AF0B8001AD5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFDD261E21454E9F004DA459 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		D1631492D16430640E7A6B84 /* Pods_OurFingering.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurFingering.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70E412A6C469711CA5FBE74 /* Pods_OurFingeringTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurFingeringTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 			children = (
 				CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */,
 				CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */,
+				CFDD261E21454E9F004DA459 /* PostViewController.swift */,
 				CF99ABC4213AF0B6001AD5EE /* Main.storyboard */,
 				CF99ABC7213AF0B8001AD5EE /* Assets.xcassets */,
 				CF99ABC9213AF0B8001AD5EE /* LaunchScreen.storyboard */,
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDD261F21454E9F004DA459 /* PostViewController.swift in Sources */,
 				CF99ABC3213AF0B6001AD5EE /* MainViewController.swift in Sources */,
 				CF99ABC1213AF0B6001AD5EE /* AppDelegate.swift in Sources */,
 			);
