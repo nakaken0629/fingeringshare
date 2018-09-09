@@ -17,4 +17,8 @@ class PostViewController : UIViewController {
         super.viewDidLoad()
         self.photoImageView.image = image
     }
+    
+    @IBAction func cancelClick(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

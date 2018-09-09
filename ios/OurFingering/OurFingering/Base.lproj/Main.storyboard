@@ -109,7 +109,11 @@
                         <viewLayoutGuide key="safeArea" id="gmE-oC-dDB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="oge-BG-Nrz">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eng-fY-rcw"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eng-fY-rcw">
+                            <connections>
+                                <action selector="cancelClick:" destination="ICJ-xJ-8Zo" id="wNM-5f-yQU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="eZT-mN-0nJ"/>
                     </navigationItem>
                     <connections>
