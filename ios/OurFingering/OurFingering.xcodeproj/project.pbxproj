@@ -49,7 +49,7 @@
 		CF12B6C2214463F700CDF288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF244F102142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CF244F112142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CF88F33B214560F100D8943B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		CF5BFD2821470E9F0017C7ED /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		CF99ABBD213AF0B6001AD5EE /* OurFingering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurFingering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CF99ABC5213AF0B6001AD5EE /* Base */,
-				CF88F33B214560F100D8943B /* ja */,
+				CF5BFD2821470E9F0017C7ED /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

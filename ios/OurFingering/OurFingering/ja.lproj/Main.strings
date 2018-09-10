@@ -1,9 +1,9 @@
 
-/* Class = "UILabel"; text = "タイトル"; ObjectID = "G0D-DF-8Jy"; */
-"G0D-DF-8Jy.text" = "タイトル";
+/* Class = "UILabel"; text = "楽器"; ObjectID = "5qd-VC-jeL"; */
+"5qd-VC-jeL.text" = "楽器";
 
-/* Class = "UILabel"; text = "楽器"; ObjectID = "dai-Qu-enV"; */
-"dai-Qu-enV.text" = "楽器";
+/* Class = "UILabel"; text = "タイトル"; ObjectID = "XBL-wj-Alm"; */
+"XBL-wj-Alm.text" = "タイトル";
 
 /* Class = "UIBarButtonItem"; title = "シェアする"; ObjectID = "eZT-mN-0nJ"; */
 "eZT-mN-0nJ.title" = "シェアする";
@@ -11,8 +11,8 @@
 /* Class = "UINavigationItem"; title = "OurFingering"; ObjectID = "mP1-Pm-9jh"; */
 "mP1-Pm-9jh.title" = "OurFingering";
 
+/* Class = "UILabel"; text = "作曲家"; ObjectID = "nVH-Pf-Oqi"; */
+"nVH-Pf-Oqi.text" = "作曲家";
+
 /* Class = "UINavigationItem"; title = "新規投稿"; ObjectID = "oge-BG-Nrz"; */
 "oge-BG-Nrz.title" = "新規投稿";
-
-/* Class = "UILabel"; text = "作曲家"; ObjectID = "w5M-mV-cFr"; */
-"w5M-mV-cFr.text" = "作曲家";
