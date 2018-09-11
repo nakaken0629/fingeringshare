@@ -32,8 +32,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun initSpeedDial(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
-            speedDial.addActionItem(SpeedDialActionItem.Builder(R.id.fab_camera, android.R.drawable.ic_menu_camera).create())
-            speedDial.addActionItem(SpeedDialActionItem.Builder(R.id.fab_gallery, android.R.drawable.ic_menu_gallery).create())
+            listOf(
+                    Pair(R.id.fab_camera, android.R.drawable.ic_menu_camera),
+                    Pair(R.id.fab_gallery, android.R.drawable.ic_menu_gallery)
+            ).forEach {
+                speedDial.addActionItem(SpeedDialActionItem.Builder(it.first, it.second).create())
+            }
         }
     }
 
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     private fun fabGalleryClick(): Boolean {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("image/*");
+        intent.type = "image/*";
         if (intent.resolveActivity(packageManager) != null) {
             startActivityForResult(intent, REQUEST_GALLERY)
         }
