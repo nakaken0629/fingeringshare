@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWy-If-rYH">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWy-If-rYH" userLabel="Scroll View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-Fk-Czp" userLabel="Content View">
@@ -59,7 +59,7 @@
                                                 <rect key="frame" x="8" y="285" width="359" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVH-Pf-Oqi" userLabel="Composer Label">
                                                 <rect key="frame" x="8" y="323" width="79.5" height="21"/>
@@ -71,7 +71,7 @@
                                                 <rect key="frame" x="8" y="352" width="359" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBL-wj-Alm" userLabel="TItle Label">
                                                 <rect key="frame" x="8" y="390" width="33.5" height="21"/>
@@ -83,7 +83,7 @@
                                                 <rect key="frame" x="8" y="419" width="359" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +140,11 @@
                         <barButtonItem key="rightBarButtonItem" title="Share" id="eZT-mN-0nJ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="composerTextField" destination="sRq-tN-I6B" id="QBh-j8-1mw"/>
+                        <outlet property="instrumentTextField" destination="rlE-al-QkM" id="T2F-E7-v7e"/>
                         <outlet property="photoImageView" destination="4QN-42-IN2" id="QTF-80-tt0"/>
+                        <outlet property="scrollView" destination="hWy-If-rYH" id="yDy-aq-sN2"/>
+                        <outlet property="titleTextField" destination="3MW-Gt-GxM" id="lZH-Wx-tiC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmI-52-KCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

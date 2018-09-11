@@ -11,14 +11,97 @@ import UIKit
 class PostViewController : UIViewController {
     var image: UIImage?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var instrumentTextField: UITextField!
+    @IBOutlet weak var composerTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     
+    var selectedTextField:UITextField?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textFieldInit()
         self.photoImageView.image = image
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillBeShown(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillBeHidden(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillShow,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillHide,
+                                                  object: nil)
     }
     
     @IBAction func cancelClick(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PostViewController : UITextFieldDelegate {
+    func textFieldInit() {
+        self.selectedTextField = self.instrumentTextField
+        self.instrumentTextField.delegate = self
+        self.composerTextField.delegate = self
+        self.titleTextField.delegate = self
+    }
+    
+    @objc func keyboardWillBeShown(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
+                restoreScrollViewSize()
+                
+                let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
+                let offsetY: CGFloat = self.selectedTextField!.frame.maxY - convertedKeyboardFrame.minY
+                if offsetY < 0 { return }
+                updateScrollViewSize(moveSize: offsetY, duration: animationDuration)
+            }
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(notification: NSNotification) {
+        restoreScrollViewSize()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.selectedTextField = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func updateScrollViewSize(moveSize: CGFloat, duration: TimeInterval) {
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(duration)
+        
+        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.scrollView.contentOffset = CGPoint(x: 0, y: moveSize)
+        
+        UIView.commitAnimations()
+    }
+    
+    func restoreScrollViewSize() {
+        self.scrollView.contentInset = UIEdgeInsets.zero
+        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }
