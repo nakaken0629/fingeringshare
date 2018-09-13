@@ -1,6 +1,15 @@
 <resources>
+    <!-- global -->
     <string name="app_name">OurFingering</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="fab_from_camera">from camera</string>
-    <string name="fab_from_library">from library</string>
+    <string name="global_cannot_create_temp_file">It\'s not be able to create a temporary file.</string>
+
+    <!-- main -->
+    <string name="main_no_camera">There is no camera app in your mobile phone.</string>
+
+    <!-- post -->
+    <string name="post_share">Share</string>
+    <string name="post_photo_description">A photo about fingering</string>
+    <string name="post_instrument">Instrument</string>
+    <string name="post_composer">Composer</string>
+    <string name="post_title">Title</string>
 </resources>
