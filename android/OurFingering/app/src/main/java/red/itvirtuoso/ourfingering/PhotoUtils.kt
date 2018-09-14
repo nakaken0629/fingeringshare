@@ -4,9 +4,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
-import android.util.Log
-import kotlinx.android.synthetic.main.activity_post.*
-import red.itvirtuoso.ourfingering.ui.PostActivity
 
 object PhotoUtils {
     fun createBitmap(targetW: Int, targetH: Int, photoPath: String): Bitmap {
