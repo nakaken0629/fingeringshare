@@ -17,8 +17,6 @@ class PostViewController : UIViewController {
     @IBOutlet weak var composerTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     
-    var selectedTextField:UITextField?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textFieldInit()
@@ -56,7 +54,6 @@ class PostViewController : UIViewController {
 
 extension PostViewController : UITextFieldDelegate {
     func textFieldInit() {
-        self.selectedTextField = self.instrumentTextField
         self.instrumentTextField.delegate = self
         self.composerTextField.delegate = self
         self.titleTextField.delegate = self
@@ -64,13 +61,12 @@ extension PostViewController : UITextFieldDelegate {
     
     @objc func keyboardWillBeShown(notification: NSNotification) {
         if let userInfo = notification.userInfo {
-            if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
+            if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
                 restoreScrollViewSize()
-                
                 let convertedKeyboardFrame = scrollView.convert(keyboardFrame, from: nil)
-                let offsetY: CGFloat = self.selectedTextField!.frame.maxY - convertedKeyboardFrame.minY
+                let offsetY: CGFloat = self.titleTextField.frame.maxY - convertedKeyboardFrame.minY
                 if offsetY < 0 { return }
-                updateScrollViewSize(moveSize: offsetY, duration: animationDuration)
+                updateScrollViewSize(offsetY)
             }
         }
     }
@@ -79,25 +75,16 @@ extension PostViewController : UITextFieldDelegate {
         restoreScrollViewSize()
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.selectedTextField = textField
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func updateScrollViewSize(moveSize: CGFloat, duration: TimeInterval) {
-        UIView.beginAnimations("ResizeForKeyboard", context: nil)
-        UIView.setAnimationDuration(duration)
-        
-        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+    func updateScrollViewSize(_ offsetY: CGFloat) {
+        let contentInsets = UIEdgeInsetsMake(0, 0, offsetY, 0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
-        self.scrollView.contentOffset = CGPoint(x: 0, y: moveSize)
-        
-        UIView.commitAnimations()
+        self.scrollView.contentOffset = CGPoint(x: 0, y: offsetY)
     }
     
     func restoreScrollViewSize() {
