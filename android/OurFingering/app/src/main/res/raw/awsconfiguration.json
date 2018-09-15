@@ -3,5 +3,24 @@
     "Version": "1.0",
     "IdentityManager": {
         "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:5b7615f2-273b-48f5-80ad-7890b4581506",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "PinpointAnalytics": {
+        "Default": {
+            "AppId": "990fa76819b240709bc310b78511d2a1",
+            "Region": "us-east-1"
+        }
+    },
+    "PinpointTargeting": {
+        "Default": {
+            "Region": "us-east-1"
+        }
     }
 }
