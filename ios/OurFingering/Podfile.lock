@@ -4,10 +4,13 @@ PODS:
   - AWSCore (2.6.28)
   - AWSMobileClient (2.6.28):
     - AWSAuthCore (= 2.6.28)
+  - AWSPinpoint (2.6.28):
+    - AWSCore (= 2.6.28)
   - Floaty (4.0.1)
 
 DEPENDENCIES:
   - AWSMobileClient (~> 2.6.13)
+  - AWSPinpoint (~> 2.6.13)
   - Floaty (~> 4.0.0)
 
 SPEC REPOS:
@@ -15,14 +18,16 @@ SPEC REPOS:
     - AWSAuthCore
     - AWSCore
     - AWSMobileClient
+    - AWSPinpoint
     - Floaty
 
 SPEC CHECKSUMS:
   AWSAuthCore: 0cac96d75993f2d13c5a357b88e965ae497c9eb7
   AWSCore: f75fcf5b2f4325da49ae1f7cb5484778d3b0acc6
   AWSMobileClient: e7b73edb915a71e3f3809382b9290fdf19da49a5
+  AWSPinpoint: e59c331e17a092f28fec768076cbcd32e087360e
   Floaty: 82854e1a5ef4fa208281ebd4da2f3d1e51ba67a6
 
-PODFILE CHECKSUM: 3f52fc6535d21e9e0652480e668c7c5f6fc12bb1
+PODFILE CHECKSUM: f319911ee5b8a86e7f19b4dcc842c8fac4201c59
 
 COCOAPODS: 1.5.3

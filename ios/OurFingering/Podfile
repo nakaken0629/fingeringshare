@@ -8,6 +8,7 @@ target 'OurFingering' do
   # Pods for OurFingering
   pod "Floaty", "~> 4.0.0"
   pod 'AWSMobileClient', '~> 2.6.13'
+  pod 'AWSPinpoint', '~> 2.6.13'
 
   target 'OurFingeringTests' do
     inherit! :search_paths

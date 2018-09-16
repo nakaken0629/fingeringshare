@@ -12,8 +12,9 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import com.amazonaws.mobile.client.AWSMobileClient
+import com.amazonaws.mobileconnectors.pinpoint.PinpointConfiguration
+import com.amazonaws.mobileconnectors.pinpoint.PinpointManager
 import com.leinardi.android.speeddial.SpeedDialActionItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -24,11 +25,12 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        private val TAG = MainActivity::class.java.name
         private const val REQUEST_CAMERA = 1001
         private const val REQUEST_CAMERA_PERMISSION = 1002
         private const val REQUEST_GALLERY = 1003
         private const val REQUEST_POST = 1004
+
+        var pinpointManager: PinpointManager? = null
     }
 
     private var mCurrentPhotoPath: String? = null
@@ -36,9 +38,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        AWSMobileClient.getInstance().initialize(this) {
-            Log.d(TAG, "AWSMobileClient is initialized")
-        }.execute()
+        AWSMobileClient.getInstance().initialize(this).execute()
+        with (AWSMobileClient.getInstance()) {
+            val config = PinpointConfiguration(this@MainActivity, credentialsProvider, configuration)
+            pinpointManager = PinpointManager(config)
+        }
+
+        pinpointManager?.sessionClient?.startSession()
+        pinpointManager?.analyticsClient?.submitEvents()
 
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
