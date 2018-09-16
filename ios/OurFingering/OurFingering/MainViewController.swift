@@ -8,12 +8,25 @@
 
 import UIKit
 import Floaty
+import AWSAuthCore
+import AWSAuthUI
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if !AWSSignInManager.sharedInstance().isLoggedIn {
+            AWSAuthUIViewController.presentViewController(with: self.navigationController!, configuration: nil, completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                if error != nil {
+                    print("Error occurred: \(String(describing: error))")
+                } else {
+                    // sign in successful.
+                }
+            })
+        }
+        
         let floaty = Floaty()
         floaty.addItem(icon: UIImage(named: "Camera"), handler: floatyCameraClick)
         floaty.addItem(icon: UIImage(named: "Library"), handler: floatyLibraryClick)
