@@ -1,0 +1,11 @@
+{
+    "appName": "ourfingering",
+    "roleName": "pinpointLambdaRole55bc614c",
+    "cloudWatchPolicyName": "cloudWatchPolicy55bc614c",
+    "pinpointPolicyName": "pinpointPolicy55bc614c",
+    "authPolicyName": "pinpoint_amplify_55bc614c",
+    "unauthPolicyName": "pinpoint_amplify_55bc614c",
+    "authRoleName": "uringering-20180916105707-authRole",
+    "unauthRoleName": "uringering-20180916105707-unauthRole",
+    "IAMPrefix": "372637396416"
+}

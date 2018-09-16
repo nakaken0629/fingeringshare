@@ -1,14 +1,47 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "uringering-20180916105707-authRole",
-            "UnauthRoleArn": "arn:aws:iam::372637396416:role/uringering-20180916105707-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::372637396416:role/uringering-20180916105707-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "uringering-20180916105707-deployment",
-            "UnauthRoleName": "uringering-20180916105707-unauthRole",
-            "StackName": "uringering-20180916105707",
-            "StackId": "arn:aws:cloudformation:us-east-1:372637396416:stack/uringering-20180916105707/d1d60b50-b953-11e8-81cc-503aca2616c5"
-        }
-    }
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "uringering-20180916105707-authRole",
+			"UnauthRoleArn": "arn:aws:iam::372637396416:role/uringering-20180916105707-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::372637396416:role/uringering-20180916105707-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "uringering-20180916105707-deployment",
+			"UnauthRoleName": "uringering-20180916105707-unauthRole",
+			"StackName": "uringering-20180916105707",
+			"StackId": "arn:aws:cloudformation:us-east-1:372637396416:stack/uringering-20180916105707/d1d60b50-b953-11e8-81cc-503aca2616c5"
+		}
+	},
+	"auth": {
+		"cognito9bed3014": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/uringering-20180916105707-deployment/amplify-cfn-templates/auth/cognito9bed3014-cloudformation-template.yml",
+				"logicalId": "authcognito9bed3014"
+			},
+			"lastPushTimeStamp": "2018-09-16T02:37:11.967Z",
+			"output": {
+				"IdentityPoolId": "us-east-1:c7e6ceec-3279-45fc-ab89-707da16996fc",
+				"IdentityPoolName": "ourfingering_identitypool_29579fa2"
+			},
+			"lastPushDirHash": "y5uGJVvgtZ4vxKNTH7M0nleEdsQ="
+		}
+	},
+	"analytics": {
+		"ourfingering": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/uringering-20180916105707-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+				"logicalId": "analyticsourfingering"
+			},
+			"lastPushTimeStamp": "2018-09-16T02:37:11.967Z",
+			"output": {
+				"appName": "ourfingering",
+				"Region": "us-east-1",
+				"Id": "2b3ced266d6b49f2846b19142780e2e0"
+			},
+			"lastPushDirHash": "b5KW4bqqc12nSRjYAZpwIghBnOY="
+		}
+	}
 }
