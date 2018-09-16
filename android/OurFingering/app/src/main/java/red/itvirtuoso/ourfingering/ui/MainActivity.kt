@@ -12,6 +12,8 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import com.amazonaws.mobile.client.AWSMobileClient
 import com.leinardi.android.speeddial.SpeedDialActionItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -19,7 +21,6 @@ import red.itvirtuoso.ourfingering.R
 import java.io.File
 import java.io.IOException
 import java.util.*
-
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -34,6 +35,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        AWSMobileClient.getInstance().initialize(this) {
+            Log.d(TAG, "AWSMobileClient is initialized")
+        }.execute()
+
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         initSpeedDial(savedInstanceState)

@@ -11,6 +11,7 @@
 		0AAD134586250D14946FC89B /* Pods_OurFingeringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C387A0B917F31B7A6C85FF /* Pods_OurFingeringUITests.framework */; };
 		88C75A81544A6471C957A35C /* Pods_OurFingering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631492D16430640E7A6B84 /* Pods_OurFingering.framework */; };
 		CF244F0C2142E4DA00D9D808 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF244F0E2142E4DA00D9D808 /* InfoPlist.strings */; };
+		CF7ED941214E1FB100438FFC /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7ED940214E1FB100438FFC /* awsconfiguration.json */; };
 		CF99ABC1213AF0B6001AD5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */; };
 		CF99ABC3213AF0B6001AD5EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */; };
 		CF99ABC6213AF0B6001AD5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99ABC4213AF0B6001AD5EE /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		CF244F102142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CF244F112142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF5BFD2821470E9F0017C7ED /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		CF7ED940214E1FB100438FFC /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		CF99ABBD213AF0B6001AD5EE /* OurFingering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurFingering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				CF99ABC9213AF0B8001AD5EE /* LaunchScreen.storyboard */,
 				CF99ABCC213AF0B8001AD5EE /* Info.plist */,
 				CF244F0E2142E4DA00D9D808 /* InfoPlist.strings */,
+				CF7ED940214E1FB100438FFC /* awsconfiguration.json */,
 			);
 			path = OurFingering;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7ED941214E1FB100438FFC /* awsconfiguration.json in Resources */,
 				CF99ABCB213AF0B8001AD5EE /* LaunchScreen.storyboard in Resources */,
 				CF244F0C2142E4DA00D9D808 /* InfoPlist.strings in Resources */,
 				CF99ABC8213AF0B8001AD5EE /* Assets.xcassets in Resources */,
@@ -332,10 +336,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OurFingering/Pods-OurFingering-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
