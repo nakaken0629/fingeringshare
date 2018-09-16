@@ -1,4 +1,8 @@
 <resources>
+    <!-- common -->
+    <string name="facebook_app_id">488637574935440</string>
+    <string name="fb_login_protocol_scheme">db488637574935440</string>
+
     <!-- global -->
     <string name="app_name">OurFingering</string>
     <string name="global_cannot_create_temp_file">It\'s not be able to create a temporary file.</string>
