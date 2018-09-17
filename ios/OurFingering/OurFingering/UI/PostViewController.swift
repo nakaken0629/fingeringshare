@@ -9,7 +9,7 @@
 import UIKit
 
 class PostViewController : UIViewController {
-    var image: UIImage?
+    var photo: UIImage?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -20,7 +20,7 @@ class PostViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textFieldInit()
-        self.photoImageView.image = image
+        self.photoImageView.image = photo
     }
     
     override func viewWillAppear(_ animated: Bool) {

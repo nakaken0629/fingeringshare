@@ -68,7 +68,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         switch identifier {
         case "Post":
             if let viewController = (segue.destination as? UINavigationController)?.topViewController as? PostViewController {
-                viewController.image = sender as? UIImage
+                viewController.photo = sender as? UIImage
             }
         default:
             break
