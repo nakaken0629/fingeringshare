@@ -121,6 +121,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF4D8723214FF6E10008FFA7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */,
+				CFDD261E21454E9F004DA459 /* PostViewController.swift */,
+				CF99ABC4213AF0B6001AD5EE /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		CF99ABB4213AF0B6001AD5EE = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +156,8 @@
 		CF99ABBF213AF0B6001AD5EE /* OurFingering */ = {
 			isa = PBXGroup;
 			children = (
+				CF4D8723214FF6E10008FFA7 /* UI */,
 				CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */,
-				CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */,
-				CFDD261E21454E9F004DA459 /* PostViewController.swift */,
-				CF99ABC4213AF0B6001AD5EE /* Main.storyboard */,
 				CF99ABC7213AF0B8001AD5EE /* Assets.xcassets */,
 				CF99ABC9213AF0B8001AD5EE /* LaunchScreen.storyboard */,
 				CF99ABCC213AF0B8001AD5EE /* Info.plist */,
