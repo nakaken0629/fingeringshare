@@ -134,7 +134,7 @@
                     <navigationItem key="navigationItem" title="Post" id="oge-BG-Nrz">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eng-fY-rcw">
                             <connections>
-                                <action selector="cancelClick:" destination="ICJ-xJ-8Zo" id="wNM-5f-yQU"/>
+                                <segue destination="fXm-Fy-zBR" kind="unwind" unwindAction="cancelPostWithSegue:" id="ZcW-sN-M4I"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="eZT-mN-0nJ"/>
@@ -148,6 +148,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmI-52-KCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fXm-Fy-zBR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2836" y="690.40479760119945"/>
         </scene>

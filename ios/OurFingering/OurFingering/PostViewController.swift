@@ -46,10 +46,6 @@ class PostViewController : UIViewController {
                                                   name: NSNotification.Name.UIKeyboardWillHide,
                                                   object: nil)
     }
-    
-    @IBAction func cancelClick(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }
 
 extension PostViewController : UITextFieldDelegate {

@@ -74,4 +74,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             break
         }
     }
+    
+    @IBAction func cancelPost(segue: UIStoryboardSegue) {
+        
+    }
 }
