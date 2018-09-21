@@ -32,13 +32,11 @@ class PostActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
         toolbar.inflateMenu(R.menu.menu_post)
 
-        savedInstanceState?.let {
-            with (it) {
-                photoPath = getString(BUNDLE_PHOTO_PATH)
-                instrumentEdit.setText(getString(BUNDLE_INSTRUMENT))
-                composerEdit.setText(getString(BUNDLE_COMPOSER))
-                titleEdit.setText(getString(BUNDLE_TITLE))
-            }
+        savedInstanceState?.run {
+            photoPath = getString(BUNDLE_PHOTO_PATH)
+            instrumentEdit.setText(getString(BUNDLE_INSTRUMENT))
+            composerEdit.setText(getString(BUNDLE_COMPOSER))
+            titleEdit.setText(getString(BUNDLE_TITLE))
         } ?: run {
             photoPath = intent.getStringExtra(KEY_PHOTO_PATH)
         }
@@ -47,13 +45,11 @@ class PostActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
-        outState?.let {
-            with(it) {
-                putString(BUNDLE_PHOTO_PATH, photoPath)
-                putString(BUNDLE_INSTRUMENT, instrumentEdit.text.toString())
-                putString(BUNDLE_COMPOSER, composerEdit.text.toString())
-                putString(BUNDLE_TITLE, titleEdit.text.toString())
-            }
+        outState?.run {
+            putString(BUNDLE_PHOTO_PATH, photoPath)
+            putString(BUNDLE_INSTRUMENT, instrumentEdit.text.toString())
+            putString(BUNDLE_COMPOSER, composerEdit.text.toString())
+            putString(BUNDLE_TITLE, titleEdit.text.toString())
         }
     }
 
