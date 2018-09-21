@@ -18,14 +18,6 @@ class AuthenticatorActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with (AWSMobileClient.getInstance()) {
-            val config = PinpointConfiguration(this@AuthenticatorActivity, credentialsProvider, configuration)
-            pinpointManager = PinpointManager(config)
-        }
-
-        pinpointManager?.sessionClient?.startSession()
-        pinpointManager?.analyticsClient?.submitEvents()
-
         AWSMobileClient.getInstance().initialize(this) {
             IdentityManager.getDefaultIdentityManager().getUserID(
                     object : IdentityHandler {
@@ -45,6 +37,15 @@ class AuthenticatorActivity : Activity() {
                     }
             )
         }.execute()
+
+        with (AWSMobileClient.getInstance()) {
+            val config = PinpointConfiguration(this@AuthenticatorActivity, credentialsProvider, configuration)
+            pinpointManager = PinpointManager(config)
+        }
+
+        pinpointManager?.sessionClient?.startSession()
+        pinpointManager?.analyticsClient?.submitEvents()
+
         finish()
     }
 }
