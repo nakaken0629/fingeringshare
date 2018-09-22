@@ -40,7 +40,10 @@ class PostActivity : AppCompatActivity() {
         } ?: run {
             photoPath = intent.getStringExtra(KEY_PHOTO_PATH)
         }
-        fingeringImage.viewTreeObserver.addOnGlobalLayoutListener { drawFingering() }
+        fingeringImage.viewTreeObserver.addOnGlobalLayoutListener {
+            val bitmap = PhotoUtils.createBitmap(fingeringImage.width, fingeringImage.height, photoPath)
+            fingeringImage.setImageBitmap(bitmap)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -56,9 +59,5 @@ class PostActivity : AppCompatActivity() {
             putString(BUNDLE_COMPOSER, composerEdit.text.toString())
             putString(BUNDLE_TITLE, titleEdit.text.toString())
         }
-    }
-
-    private fun drawFingering() {
-        fingeringImage.setImageBitmap(PhotoUtils.createBitmap(fingeringImage.width, fingeringImage.height, photoPath))
     }
 }
