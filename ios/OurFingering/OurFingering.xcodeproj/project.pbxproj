@@ -11,6 +11,7 @@
 		0AAD134586250D14946FC89B /* Pods_OurFingeringUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C387A0B917F31B7A6C85FF /* Pods_OurFingeringUITests.framework */; };
 		88C75A81544A6471C957A35C /* Pods_OurFingering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631492D16430640E7A6B84 /* Pods_OurFingering.framework */; };
 		CF244F0C2142E4DA00D9D808 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF244F0E2142E4DA00D9D808 /* InfoPlist.strings */; };
+		CF4D8725214FFBA30008FFA7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D8724214FFBA30008FFA7 /* Post.swift */; };
 		CF7ED941214E1FB100438FFC /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CF7ED940214E1FB100438FFC /* awsconfiguration.json */; };
 		CF99ABC1213AF0B6001AD5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABC0213AF0B6001AD5EE /* AppDelegate.swift */; };
 		CF99ABC3213AF0B6001AD5EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */; };
@@ -50,6 +51,7 @@
 		CF12B6C2214463F700CDF288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF244F102142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CF244F112142E51200D9D808 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF4D8724214FFBA30008FFA7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CF5BFD2821470E9F0017C7ED /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		CF7ED940214E1FB100438FFC /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		CF99ABBD213AF0B6001AD5EE /* OurFingering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurFingering.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 			children = (
 				CF99ABC2213AF0B6001AD5EE /* MainViewController.swift */,
 				CFDD261E21454E9F004DA459 /* PostViewController.swift */,
+				CF4D8724214FFBA30008FFA7 /* Post.swift */,
 				CF99ABC4213AF0B6001AD5EE /* Main.storyboard */,
 			);
 			path = UI;
@@ -346,10 +349,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OurFingering/Pods-OurFingering-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSFacebookSignIn/AWSFacebookSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -359,10 +364,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSFacebookSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -419,6 +426,7 @@
 				CFDD261F21454E9F004DA459 /* PostViewController.swift in Sources */,
 				CF99ABC3213AF0B6001AD5EE /* MainViewController.swift in Sources */,
 				CF99ABC1213AF0B6001AD5EE /* AppDelegate.swift in Sources */,
+				CF4D8725214FFBA30008FFA7 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

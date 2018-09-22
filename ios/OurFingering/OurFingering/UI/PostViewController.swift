@@ -10,6 +10,7 @@ import UIKit
 
 class PostViewController : UIViewController {
     var photo: UIImage?
+    private var post: Post?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -45,6 +46,45 @@ class PostViewController : UIViewController {
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.Name.UIKeyboardWillHide,
                                                   object: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "Share":
+            guard let photo = self.photoImageView.image else {
+                return false
+            }
+            guard let instrument = self.instrumentTextField.text else {
+                return false
+            }
+            guard let composer = self.composerTextField.text else {
+                return false
+            }
+            guard let title = self.titleTextField.text else {
+                return false
+            }
+            self.post = Post(photo: photo, instrument: instrument, composer: composer, title: title)
+            return true
+        default:
+            return true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let identifier = segue.identifier else {
+            return
+        }
+        switch identifier {
+        case "Share":
+            if let viewController = segue.destination as? MainViewController {
+                   viewController.post = self.post
+            } else {
+                assertionFailure("There may be mistakes in a storyboard.")
+            }
+        default:
+            break
+        }
     }
 }
 

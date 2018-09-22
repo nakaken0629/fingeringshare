@@ -7,12 +7,16 @@
 //
 
 import UIKit
-import Floaty
+
 import AWSAuthCore
 import AWSAuthUI
+import AWSCore
+import AWSS3
+import Floaty
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    var post: Post?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -69,6 +73,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         case "Post":
             if let viewController = (segue.destination as? UINavigationController)?.topViewController as? PostViewController {
                 viewController.photo = sender as? UIImage
+            } else {
+                assertionFailure("There may be mistakes in a storyboard.")
             }
         default:
             break
@@ -76,6 +82,47 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func cancelPost(segue: UIStoryboardSegue) {
+        // nop
+    }
+    
+    @IBAction func sharePost(segue: UIStoryboardSegue) {
+        guard let post = self.post else {
+            assertionFailure("self.post must be non-null")
+            return
+        }
+        guard let data = UIImagePNGRepresentation(post.photo) else {
+            assertionFailure("Cannot create png from photo")
+            return
+        }
+        let bucket = "ourfingering-userfiles-mobilehub-1631323487"
+        let key = "public/\(UUID().uuidString).png"
+        let contentType = "image/png"
+        let expression = AWSS3TransferUtilityUploadExpression()
+        expression.progressBlock = {(task, progress) in
+            DispatchQueue.main.async(execute: {
+                // Do something e.g. Update a progress bar.
+            })
+        }
         
+        var completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
+        completionHandler = { (task, error) -> Void in
+            DispatchQueue.main.async(execute: {
+                // Do something e.g. Alert a user for transfer completion.
+                // On failed uploads, `error` contains the error object.
+            })
+        }
+        
+        let transferUtility = AWSS3TransferUtility.default()
+        transferUtility.uploadData(data, bucket: bucket, key: key, contentType: contentType, expression: expression, completionHandler: completionHandler).continueWith {
+            (task) -> AnyObject? in
+            if let error = task.error {
+                print("Error: \(error.localizedDescription)")
+            }
+            
+            if let _ = task.result {
+                // Do something with uploadTask.
+            }
+            return nil;
+        }
     }
 }

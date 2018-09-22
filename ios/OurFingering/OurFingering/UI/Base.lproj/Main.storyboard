@@ -134,10 +134,14 @@
                     <navigationItem key="navigationItem" title="Post" id="oge-BG-Nrz">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eng-fY-rcw">
                             <connections>
-                                <segue destination="fXm-Fy-zBR" kind="unwind" unwindAction="cancelPostWithSegue:" id="ZcW-sN-M4I"/>
+                                <segue destination="fXm-Fy-zBR" kind="unwind" identifier="" unwindAction="cancelPostWithSegue:" id="ZcW-sN-M4I"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="eZT-mN-0nJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="eZT-mN-0nJ">
+                            <connections>
+                                <segue destination="fXm-Fy-zBR" kind="unwind" identifier="Share" unwindAction="sharePostWithSegue:" id="za1-Fl-wPH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="composerTextField" destination="sRq-tN-I6B" id="QBh-j8-1mw"/>
