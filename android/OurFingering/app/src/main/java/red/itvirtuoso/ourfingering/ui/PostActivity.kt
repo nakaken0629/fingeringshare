@@ -1,10 +1,12 @@
 package red.itvirtuoso.ourfingering.ui
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
+import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_post.*
 import red.itvirtuoso.ourfingering.PhotoUtils
 import red.itvirtuoso.ourfingering.R
@@ -58,6 +60,19 @@ class PostActivity : AppCompatActivity() {
             putString(BUNDLE_INSTRUMENT, instrumentEdit.text.toString())
             putString(BUNDLE_COMPOSER, composerEdit.text.toString())
             putString(BUNDLE_TITLE, titleEdit.text.toString())
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.action_share -> {
+                setResult(Activity.RESULT_OK)
+                finish()
+                return true
+            }
+            else -> {
+                return super.onOptionsItemSelected(item)
+            }
         }
     }
 }

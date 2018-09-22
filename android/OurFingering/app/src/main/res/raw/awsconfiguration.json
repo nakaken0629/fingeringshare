@@ -12,6 +12,12 @@
   "IdentityManager": {
     "Default": {}
   },
+  "S3TransferUtility": {
+    "Default": {
+      "Bucket": "ourfingering-userfiles-mobilehub-1631323487",
+      "Region": "us-east-1"
+    }
+  },
   "PinpointAnalytics": {
     "Default": {
       "AppId": "3dedf7543a7b4902864608164f9fdc09",
@@ -20,6 +26,12 @@
   },
   "PinpointTargeting": {
     "Default": {
+      "Region": "us-east-1"
+    }
+  },
+  "UserFileManager": {
+    "Default": {
+      "Bucket": "ourfingering-userfiles-mobilehub-1631323487",
       "Region": "us-east-1"
     }
   },

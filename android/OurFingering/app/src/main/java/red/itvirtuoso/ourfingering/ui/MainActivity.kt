@@ -12,6 +12,13 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import com.amazonaws.mobile.auth.core.IdentityManager
+import com.amazonaws.mobile.client.AWSMobileClient
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferState
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility
+import com.amazonaws.services.s3.AmazonS3Client
 import com.leinardi.android.speeddial.SpeedDialActionItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -22,6 +29,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
+        private val TAG = MainActivity::class.java.name
         private const val REQUEST_CAMERA = 1001
         private const val REQUEST_CAMERA_PERMISSION = 1002
         private const val REQUEST_GALLERY = 1003
@@ -134,6 +142,9 @@ class MainActivity : AppCompatActivity() {
             REQUEST_GALLERY -> {
                 onGallery(resultCode, data)
             }
+            REQUEST_POST -> {
+                onPost(resultCode, data)
+            }
             else -> {
                 super.onActivityResult(requestCode, resultCode, data)
             }
@@ -150,5 +161,35 @@ class MainActivity : AppCompatActivity() {
 
     private fun onGallery(resultCode: Int, data: Intent?) {
 
+    }
+
+    private fun onPost(resultCode: Int, data: Intent?) {
+        if (resultCode != Activity.RESULT_OK) return
+        val transferUtility = TransferUtility.builder()
+                .context(this.applicationContext)
+                .awsConfiguration(AWSMobileClient.getInstance().configuration)
+                .s3Client(AmazonS3Client(AWSMobileClient.getInstance().credentialsProvider))
+                .build()
+
+        val key = "private/${IdentityManager.getDefaultIdentityManager().cachedUserID}/${UUID.randomUUID()}.jpeg"
+        Log.v(TAG, "key = ${key}")
+        val uploadObserver = transferUtility.upload(key, File(mCurrentPhotoPath))
+        // Attach a listener to the observer
+        uploadObserver.setTransferListener(object : TransferListener {
+            override fun onStateChanged(id: Int, state: TransferState) {
+                if (state == TransferState.COMPLETED) {
+                    // Handle a completed upload
+                }
+            }
+
+            override fun onProgressChanged(id: Int, current: Long, total: Long) {
+                val done = (((current.toDouble() / total) * 100.0).toInt())
+                Log.d(TAG, "UPLOAD - - ID: $id, percent done = $done")
+            }
+
+            override fun onError(id: Int, ex: Exception) {
+                Log.d(TAG, "UPLOAD ERROR - - ID: $id - - EX: ${ex.message.toString()}")
+            }
+        })
     }
 }

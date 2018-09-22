@@ -19,33 +19,22 @@ class AuthenticatorActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         AWSMobileClient.getInstance().initialize(this) {
-            IdentityManager.getDefaultIdentityManager().getUserID(
-                    object : IdentityHandler {
-                        override fun onIdentityId(s: String) {
-                            val intent = Intent(applicationContext, MainActivity::class.java)
-                            startActivity(intent)
-                        }
-
-                        override fun handleError(ex: Exception) {
-                            val ui = AWSMobileClient.getInstance().getClient(
-                                    this@AuthenticatorActivity,
-                                    SignInUI::class.java) as SignInUI?
-                            ui?.login(
-                                    this@AuthenticatorActivity,
-                                    MainActivity::class.java)?.execute()
-                        }
-                    }
-            )
+            val signInUI = AWSMobileClient.getInstance().getClient(
+                    this@AuthenticatorActivity,
+                    SignInUI::class.java) as SignInUI?
+            signInUI?.login(
+                    this@AuthenticatorActivity,
+                    MainActivity::class.java)?.execute()
         }.execute()
-
-        with (AWSMobileClient.getInstance()) {
-            val config = PinpointConfiguration(this@AuthenticatorActivity, credentialsProvider, configuration)
-            pinpointManager = PinpointManager(config)
-        }
-
-        pinpointManager?.sessionClient?.startSession()
-        pinpointManager?.analyticsClient?.submitEvents()
-
+//
+//        with (AWSMobileClient.getInstance()) {
+//            val config = PinpointConfiguration(this@AuthenticatorActivity, credentialsProvider, configuration)
+//            pinpointManager = PinpointManager(config)
+//        }
+//
+//        pinpointManager?.sessionClient?.startSession()
+//        pinpointManager?.analyticsClient?.submitEvents()
+//
         finish()
     }
 }
