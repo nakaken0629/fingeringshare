@@ -4,13 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import kotlinx.android.synthetic.main.activity_post.*
 import red.itvirtuoso.ourfingering.PhotoUtils
 import red.itvirtuoso.ourfingering.R
 
 class PostActivity : AppCompatActivity() {
     companion object {
-        private val TAG = PostActivity::class.java.name
         private const val KEY_PHOTO_PATH = "PHOTO_PATH"
         private const val BUNDLE_PHOTO_PATH = "PHOTO_PATH"
         private const val BUNDLE_INSTRUMENT = "INSTRUMENT"
@@ -29,8 +29,8 @@ class PostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
+        setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener { finish() }
-        toolbar.inflateMenu(R.menu.menu_post)
 
         savedInstanceState?.run {
             photoPath = getString(BUNDLE_PHOTO_PATH)
@@ -41,6 +41,11 @@ class PostActivity : AppCompatActivity() {
             photoPath = intent.getStringExtra(KEY_PHOTO_PATH)
         }
         fingeringImage.viewTreeObserver.addOnGlobalLayoutListener { drawFingering() }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_post, menu)
+        return true
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
